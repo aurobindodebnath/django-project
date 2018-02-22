@@ -1,0 +1,18 @@
+{% extends 'base_t.html' %}
+
+{% block body %}
+
+	<div class="container">
+	{% for key in riddles %}	
+		<div class="well"><strong>Riddle: </strong>
+		<span>{{ key.text }}</span><br><br>
+		{% if key %}
+			<div><a href="{% url 'submit' riddle_id=key.id %}" class="btn btn-primary" role="button">Submit Solution</a></div>
+		{% else %}
+			<div><span class="glyphicon glyphicon-ok"></span> Submitted</div>
+		{% endif %}
+
+		</div>
+	{% endfor %}		
+	</div>
+{% endblock %}

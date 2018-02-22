@@ -1,0 +1,34 @@
+#body{
+	background-image: url("images/bg.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.login{
+	float:left;
+	padding: 10px 5px;
+}
+
+.bg1{
+	background-color: #171d31;
+	color: #a5983c;
+	letter-spacing: 5px;
+	padding: 10px 0px;
+}
+.bg2{
+	background-color: white;
+	padding: 40px 10%;
+}
+.bg3{
+	background-color: #eee;
+	padding: 40px 10%;
+}
+.bg4{
+	background-color: #ccc;
+	padding: 10px 10px;
+}
+.bg5{
+	background-color: steelblue;
+	margin-top: -20px;
+}

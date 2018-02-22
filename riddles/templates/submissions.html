@@ -1,0 +1,19 @@
+{% extends 'base_t.html' %}
+
+{% block body %}
+
+{% for x in submits %}
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <div class="caption"><h4>{{ x.riddle.text }}</h4></div>
+                <img src="{{ x.image.url }}" class="img-responsive" width="300" height="300">
+                <div class="caption">
+                    <h4>{{ x.description }}</h4>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+
+
+
+{% endblock %}

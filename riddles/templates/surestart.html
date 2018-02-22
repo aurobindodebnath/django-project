@@ -1,0 +1,10 @@
+{% extends 'base_a.html' %}
+
+{% block body %}
+	<div class="container bg2 ">
+	 <h1>Are you sure you want to Start Round 1? </h1>
+	 <br><br>
+	 <a href="{% url 'surestart' %}" class="btn btn-success" role="button">Yes</a>&nbsp;&nbsp;&nbsp;	
+	 <a href="{% url 'loggedin' %}" class="btn btn-warning" role="button">No</a>
+	</div>
+{% endblock %}

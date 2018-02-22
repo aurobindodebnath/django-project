@@ -1,0 +1,27 @@
+
+{% extends 'base_t.html' %}
+
+{% block body %}
+		
+<div class="container-fluid bg4">
+  <div><h3><span class="glyphicon glyphicon-stats"></span> Standings </h3></div>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Leader Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for use in users %}
+      <tr>
+        <td>{{ use.foo.team_name }}</td>
+        <td>{{ use.foo.member1 }}</td>
+        <td>{{ use.foo.score }}</td>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!--Start of Login-->
+<form class="form-inline bg2" action="{% url 'login' %}" method="post">
+{% csrf_token %}
+
+<div><h3><span class="glyphicon glyphicon-log-in"></span> Login</h3></div>
+  <div class="alert"><strong> {{ login_message }}</strong></div>
+  </div>
+
+  <div class="form-group">
+    <label for="lteamid">Username:</label>
+    <input type="text" class="form-control" id="lteamid" name="username">
+  </div>
+  <div class="form-group">
+    <label for="lpwd">Password:</label>
+    <input type="password" class="form-control" id="lpwd" name="password">
+  </div>
+  <button type="submit" class="btn btn-default">Log In</button>
+</form>
+
+<!--End of login-->
+
+
+<div class="container-fluid bg3">
+	<div class="row">
+	<!--Rules-->
+		<!--<div class="col-sm-6">
+		<iframe src="https://www.google.com/maps/d/embed?mid=1XsVizeryFClrYiod74WBKSasFaY" width=100% height="480"></iframe>
+		</div>-->
+		<div class="col-sm-12">
+			<div><h3><span class="glyphicon glyphicon-th-list"><span> NOTE</h3>
+			</div>
+<br>
+<strong>RULES FOR ROUND 1:</strong>
+<ul>
+<li>Each team consists of 2-4 members</li>
+<li>Riddles of different difficultly levels will be given to each team</li>
+<li>Only one submission per riddle is permitted.</li>
+<li>There are +4 points for each correct submission and no negative marking for wrong submissions</li>
+<li>In case of tie at first spot, prize will be distributed equally amongst the conflicting teams.</li>
+
+</ul>
+
+<strong>HOW TO SUBMIT SOLUTION?</strong>
+<ul>
+<li>Each team is given a username and a password.</li>
+<li>After logging in, you need to upload a picture and a one word/line description for each riddle.</li>
+<li>One you submit the solution to a riddle, the riddle will not be visible in 'Riddles' Tab</li>
+<li>You can keep track of all your submitted solutions in the 'Submissions' Tab</li>
+</ul>
+
+<strong>WHAT TO DO AFTER ROUND 1?</strong>
+<ul>
+<li>Have a look at your position in the Standings table</li>
+<li>Come back to the origin spot </li>
+</ul>
+<strong>SUGGESTIONS:</strong>
+<ul>
+<li>Upload your solution carefully since only one attempt per riddle is available.</li>
+<li>Keep track of your position in the Standings table during the event.</li>
+<li>Keep track of Time and use maps if required</li></ul>
+		</div>
+	<!--End of Rules-->
+	</div>
+</div>
+	
+	<!--Score-->
+		
+<div class="container-fluid bg4">
+  <div><h3><span class="glyphicon glyphicon-stats"></span> Standings </h3></div>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Leader Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for use in users %}
+      <tr>
+        <td>{{ use.foo.team_name }}</td>
+        <td>{{ use.foo.member1 }}</td>
+        <td>{{ use.foo.score }}</td>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+	<!--End of Score-->
+{% endblock %}
