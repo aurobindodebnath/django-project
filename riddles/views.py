@@ -67,6 +67,7 @@ def loggedin(request):
 		else:
 			return render(request, 'eventover.html', {})
 
+#view to display previous submissions
 @login_required
 def submissions(request):
 	submits= Solution.objects.filter(user= request.user)
